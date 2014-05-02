@@ -38,7 +38,7 @@ def Main():
 
             date_YYYMM.append(year_month) 
     
-    Graph_TEO_Monthly(description, value, date_YYYMM)
+    SetUp2Graph(description, value, date_YYYMM)
     #print description
     file_path.close()
     f.close()
@@ -47,7 +47,7 @@ def Main():
     #print value[0], len(value)
     #print date_YYYMM[0], len(date_YYYMM)
 
-def Graph_TEO_Monthly(Desc, Value, Dates):
+def SetUp2Graph(Desc, Value, Dates):
     #Graphing TotalEnergyOverview_Monthly_1973-2013 .. Include multiple sectors
     
     primary_energy_consumption=[]
@@ -104,32 +104,30 @@ def Graph_TEO_Monthly(Desc, Value, Dates):
     
     Dates = list(set(Dates))
     Dates.sort()
+    #Sorting Dates out so that graph doesn't look like shit
+    Graph_Data_Simple(Dates,primary_energy_consumption,"US Total Primary Energy Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
+    Graph_Data_Simple(Dates,primary_energy_production,"US Total Primary Energy Production 1973-2013",'Primary Energy Production','-g','-k')
+    Graph_Data_Simple(Dates,primary_energy_exports,"US Total Primary Energy Exports 1973-2013",'Primary Energy Exports','-m','-c')
+    Graph_Data_Simple(Dates,primary_energy_imports,"US Total Primary Energy Imports 1973-2013",'Primary Energy Imports','-k','-r')
     
+def Graph_Data_Simple(Dates,Data_Set,Graph_Title,Data_Set_Title,line_color,poly_lc):
+    plt.figure()
     x = mdates.date2num(Dates)
-    y=[]
-    [y.append(float(primary_energy_consumption[i])) for i in range(len(primary_energy_consumption))]
+    #Setting up dates so that they can plot correctly
     x = x.tolist()
+    #Converting x to list from np.array so that polyfit line can be generated
+    y=[]
+    [y.append(float(Data_Set[i])) for i in range(len(Data_Set))]
+    #Setting up the BTU measures
     poly_fit_ln = polyfit(x,y,5)
     poly_fit_fn = poly1d(poly_fit_ln)
-    plt.plot(Dates, primary_energy_consumption,'-b',x,poly_fit_fn(x))
-    #plt.plot(x, y)
-    plt.title("US Total Primary Energy Consumption 1973-2013")
-    #print len(x), len(y)
-    #g =np.polyfit(x,y,30)
-    #h = np.poly1d(g)
-    #print len(Dates), len(g), len(h), len(y)
-    #plt.plot(Dates, g)
-    
-    
-    
-    #plt.plot(Dates, primary_energy_production)
-    #plt.plot(Dates, primary_energy_imports)
-    
-    #plt.legend(['Primary Energy Consumption', 'Primary Energy Production', 'Primary Energy Imports'], loc='upper left')
-    
+    #Linear regression
+    plt.plot(Dates, Data_Set,line_color,Dates,poly_fit_fn(x),poly_lc)
+    plt.title(Graph_Title)
+    plt.ylabel('Quadrillion BTU')
+    plt.xlabel('Years')
+    #plt.legend([Data_Set_Title], loc='upper left')
     plt.show()
     
-    #print Desc, Value, Dates
-
 
 Main()
