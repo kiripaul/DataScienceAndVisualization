@@ -6,6 +6,7 @@ import datetime
 import matplotlib,matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import numpy as np
+from pylab import *
 
 def Main():
     file_path = open("TotalEnergyOverview_Monthly_1973-2013.csv",'r')
@@ -100,15 +101,6 @@ def Graph_TEO_Monthly(Desc, Value, Dates):
             primary_energy_net_imports.append(Value[j])
         elif Desc[j] == 'Primary Energy Imports':
             primary_energy_imports.append(Value[j])
-
-    ##This Shit doesn't do what I want but it graphs without it...
-    #plt_dates = matplotlib.dates.date2num(Dates)
-    #print plt_dates
-    #print Dates
-    ##This Shit doesn't do what I want but it graphs without it...
-    
-    #plt.plot(Dates, Value,'b-')
-    #plt.show()
     
     Dates = list(set(Dates))
     Dates.sort()
@@ -116,8 +108,12 @@ def Graph_TEO_Monthly(Desc, Value, Dates):
     x = mdates.date2num(Dates)
     y=[]
     [y.append(float(primary_energy_consumption[i])) for i in range(len(primary_energy_consumption))]
-    
-    plt.plot(Dates, primary_energy_consumption)
+    x = x.tolist()
+    poly_fit_ln = polyfit(x,y,5)
+    poly_fit_fn = poly1d(poly_fit_ln)
+    plt.plot(Dates, primary_energy_consumption,'-b',x,poly_fit_fn(x))
+    #plt.plot(x, y)
+    plt.title("US Total Primary Energy Consumption 1973-2013")
     #print len(x), len(y)
     #g =np.polyfit(x,y,30)
     #h = np.poly1d(g)
