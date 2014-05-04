@@ -105,10 +105,48 @@ def SetUp2Graph(Desc, Value, Dates):
     Dates = list(set(Dates))
     Dates.sort()
     #Sorting Dates out so that graph doesn't look like shit
-    Graph_Data_Simple(Dates,primary_energy_consumption,"US Total Primary Energy Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
-    Graph_Data_Simple(Dates,primary_energy_production,"US Total Primary Energy Production 1973-2013",'Primary Energy Production','-g','-k')
-    Graph_Data_Simple(Dates,primary_energy_exports,"US Total Primary Energy Exports 1973-2013",'Primary Energy Exports','-m','-c')
-    Graph_Data_Simple(Dates,primary_energy_imports,"US Total Primary Energy Imports 1973-2013",'Primary Energy Imports','-k','-r')
+    #Graphing each individual Sector
+    #Graph_Data_Simple(Dates,primary_energy_consumption,"US Total Primary Energy Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
+    #Graph_Data_Simple(Dates,primary_energy_production,"US Total Primary Energy Production 1973-2013",'Primary Energy Production','-g','-k')
+    #
+    #Graph_Data_Simple(Dates,primary_energy_exports,"US Total Primary Energy Exports 1973-2013",'Primary Energy Exports','-m','-c')
+    #Graph_Data_Simple(Dates,primary_energy_imports,"US Total Primary Energy Imports 1973-2013",'Primary Energy Imports','-k','-r')
+    #
+    #Graph_Data_Simple(Dates,nuclear_electric_consumption,"US Total Nuclear Electric Consumption 1973-2013",'Nuclear Electric Consumption','-g','-k')
+    #Graph_Data_Simple(Dates,nuclear_electric_production,"US Total Nuclear Electric Production 1973-2013",'Nuclear Electric Production','-b','-g')
+    #
+    #Graph_Data_Simple(Dates,renewable_energy_consumption,"US Total Renewable Energy Consumption 1973-2013",'Renewable Energy Consumption','-g','-r')
+    #Graph_Data_Simple(Dates,renewable_energy_production,"US Total Renewable Energy Production 1973-2013",'Renewable Energy Production','-r','-b')
+    #
+    #Graph_Data_Simple(Dates,fossil_fuel_production,"US Total Fossil Fuel Production 1973-2013",'Fossil Fuel Production','-g','-b')
+    #Graph_Data_Simple(Dates,fossil_fuel_consumption,"US Total Fossil Fuel Consumption 1973-2013",'Fossil Fuel Consumption','-b','-r')
+    
+    #Primary Energy Consumption vs Sector
+    Graph_Data_Simple2(Dates,primary_energy_consumption,"Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
+    Graph_Data_Simple2(Dates,nuclear_electric_consumption,"Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013",'Nuclear Electric Consumption','-g','-k')
+   
+    #x = mdates.date2num(Dates)
+    ##Setting up dates so that they can plot correctly
+    #x = x.tolist()
+    ##Converting x to list from np.array so that polyfit line can be generated
+    #y=[]
+    #y2=[]
+    #[y.append(float(primary_energy_consumption[i])) for i in range(len(primary_energy_consumption))]
+    #[y2.append(float(nuclear_electric_consumption[i])) for i in range(len(nuclear_electric_consumption))]
+    ##Setting up the BTU measures
+    #poly_fit_ln = polyfit(x,y,5)
+    #poly_fit_ln2 = polyfit(x,y2,5)
+    #poly_fit_fn = poly1d(poly_fit_ln)
+    #poly_fit_fn2 = poly1d(poly_fit_ln2)
+    ##Linear regression
+    #plt.plot(Dates, primary_energy_consumption,'-b',Dates,poly_fit_fn(x),'-r')
+    #plt.show
+    #plt.plot(Dates, nuclear_electric_consumption,'-g',Dates,poly_fit_fn2(x),'-k')
+    #plt.title("Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013")
+    #plt.ylabel('Quadrillion BTU')
+    #plt.xlabel('Years')
+    #plt.legend(["Primary Energy Consumption","Nuclear Electric Consumption"], loc='upper left')
+    
     
 def Graph_Data_Simple(Dates,Data_Set,Graph_Title,Data_Set_Title,line_color,poly_lc):
     plt.figure()
@@ -127,6 +165,24 @@ def Graph_Data_Simple(Dates,Data_Set,Graph_Title,Data_Set_Title,line_color,poly_
     plt.ylabel('Quadrillion BTU')
     plt.xlabel('Years')
     #plt.legend([Data_Set_Title], loc='upper left')
+    plt.show()
+    
+def Graph_Data_Simple2(Dates,Data_Set,Graph_Title,Data_Set_Title,line_color,poly_lc):
+    x = mdates.date2num(Dates)
+    #Setting up dates so that they can plot correctly
+    x = x.tolist()
+    #Converting x to list from np.array so that polyfit line can be generated
+    y=[]
+    [y.append(float(Data_Set[i])) for i in range(len(Data_Set))]
+    #Setting up the BTU measures
+    poly_fit_ln = polyfit(x,y,5)
+    poly_fit_fn = poly1d(poly_fit_ln)
+    #Linear regression
+    plt.plot(Dates, Data_Set,line_color,Dates,poly_fit_fn(x),poly_lc)
+    plt.title(Graph_Title)
+    plt.ylabel('Quadrillion BTU')
+    plt.xlabel('Years')
+    plt.legend([Data_Set_Title], loc='upper left')
     plt.show()
     
 
