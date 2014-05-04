@@ -122,30 +122,17 @@ def SetUp2Graph(Desc, Value, Dates):
     #Graph_Data_Simple(Dates,fossil_fuel_consumption,"US Total Fossil Fuel Consumption 1973-2013",'Fossil Fuel Consumption','-b','-r')
     
     #Primary Energy Consumption vs Sector
-    Graph_Data_Simple2(Dates,primary_energy_consumption,"Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
-    Graph_Data_Simple2(Dates,nuclear_electric_consumption,"Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013",'Nuclear Electric Consumption','-g','-k')
-   
-    #x = mdates.date2num(Dates)
-    ##Setting up dates so that they can plot correctly
-    #x = x.tolist()
-    ##Converting x to list from np.array so that polyfit line can be generated
-    #y=[]
-    #y2=[]
-    #[y.append(float(primary_energy_consumption[i])) for i in range(len(primary_energy_consumption))]
-    #[y2.append(float(nuclear_electric_consumption[i])) for i in range(len(nuclear_electric_consumption))]
-    ##Setting up the BTU measures
-    #poly_fit_ln = polyfit(x,y,5)
-    #poly_fit_ln2 = polyfit(x,y2,5)
-    #poly_fit_fn = poly1d(poly_fit_ln)
-    #poly_fit_fn2 = poly1d(poly_fit_ln2)
-    ##Linear regression
-    #plt.plot(Dates, primary_energy_consumption,'-b',Dates,poly_fit_fn(x),'-r')
-    #plt.show
-    #plt.plot(Dates, nuclear_electric_consumption,'-g',Dates,poly_fit_fn2(x),'-k')
-    #plt.title("Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013")
-    #plt.ylabel('Quadrillion BTU')
-    #plt.xlabel('Years')
-    #plt.legend(["Primary Energy Consumption","Nuclear Electric Consumption"], loc='upper left')
+    #Graph_Data_Simple2(Dates,primary_energy_consumption,"Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
+    #Graph_Data_Simple2(Dates,nuclear_electric_consumption,"Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013",'Nuclear Electric Consumption','-g','-k')
+    #plt.legend(['Primary Energy Consumption','Best Fit Primary Energy','Nulcear Electric Consumption','Best Fit Nuclear'], loc='right')
+ 
+    #Graph_Data_Simple2(Dates,primary_energy_consumption,"Primary Energy Consumption VS Renewable Energy Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
+    #Graph_Data_Simple2(Dates,renewable_energy_consumption,"Primary Energy Consumption VS Renewable Energy Consumption 1973-2013",'Renewable Energy Consumption','-g','-r')
+    #plt.legend(['Primary Energy Consumption','Best Fit Primary Energy','Renewable Energy Consumption','Best Fit Renewable'], loc='right')
+    
+    #Graph_Data_Simple2(Dates,primary_energy_consumption,"Primary Energy Consumption VS Fossil Fuel Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
+    #Graph_Data_Simple2(Dates,fossil_fuel_consumption,"Primary Energy Consumption VS Fossil Fuel Consumption 1973-2013",'Fossil Fuel Consumption','-k','-m')
+    #plt.legend(['Primary Energy Consumption','Best Fit Primary Energy','Fossil Fuel Consumption','Best Fit Fossil Fuel'], loc='upper left')
     
     
 def Graph_Data_Simple(Dates,Data_Set,Graph_Title,Data_Set_Title,line_color,poly_lc):
@@ -182,7 +169,7 @@ def Graph_Data_Simple2(Dates,Data_Set,Graph_Title,Data_Set_Title,line_color,poly
     plt.title(Graph_Title)
     plt.ylabel('Quadrillion BTU')
     plt.xlabel('Years')
-    plt.legend([Data_Set_Title], loc='upper left')
+    #plt.legend([Data_Set_Title], loc='upper left')
     plt.show()
     
 
