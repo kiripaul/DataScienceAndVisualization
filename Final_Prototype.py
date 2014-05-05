@@ -71,10 +71,6 @@ def SetUp2Graph(Desc, Value, Dates):
     
     energy_stock_change=[] 
     
-    #description = list(set(Desc)) #Finding unique descriptions
-    #print description
-    #val_desc = zip(Value, Desc) #Creating Tuples 
-    
     #Pulling out the values for each Category
     for j in range(len(Desc)):
         if Desc[j] == 'Total Primary Energy Consumption':
@@ -120,119 +116,95 @@ def SetUp2Graph(Desc, Value, Dates):
     
     ###################Primary Energy CONSUMPTION vs Sector###################
     ##Primary Nuclear###
-    #Graph_Data_Simple2(Dates,primary_energy_consumption,"Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
-    #Graph_Data_Simple2(Dates,nuclear_electric_consumption,"Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013",'Nuclear Electric Consumption','-g','-k')
-    #plt.legend(['Primary Energy Consumption','Best Fit Primary Energy','Nulcear Electric Consumption','Best Fit Nuclear'], loc='best')
+    #Graph_Data_Simple2(Dates,primary_energy_consumption,nuclear_electric_consumption,"Primary Energy Consumption VS Nuclear Electric Consumption 1973-2013",'Primary Energy Consumption','Nuclear Electric Consumption','-b','-r','-g','-k')
     #Correlate_Data(primary_energy_consumption,nuclear_electric_consumption,Dates)
+    
     ##Primary Renewable###
-    #Graph_Data_Simple2(Dates,primary_energy_consumption,"Primary Energy Consumption VS Renewable Energy Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
-    #Graph_Data_Simple2(Dates,renewable_energy_consumption,"Primary Energy Consumption VS Renewable Energy Consumption 1973-2013",'Renewable Energy Consumption','-g','-r')
-    #plt.legend(['Primary Energy Consumption','Best Fit Primary Energy','Renewable Energy Consumption','Best Fit Renewable'], loc='best')
+    #Graph_Data_Simple2(Dates,primary_energy_consumption,renewable_energy_consumption,"Primary Energy Consumption VS Renewable Energy Consumption 1973-2013",'Primary Energy Consumption','Renewable Energy Consumption','-b','-r','-g','-r')
     #Correlate_Data(primary_energy_consumption,renewable_energy_consumption,Dates)
+    
     ##Primary Fossil###
-    #Graph_Data_Simple2(Dates,primary_energy_consumption,"Primary Energy Consumption VS Fossil Fuel Consumption 1973-2013",'Primary Energy Consumption','-b','-r')
-    #Graph_Data_Simple2(Dates,fossil_fuel_consumption,"Primary Energy Consumption VS Fossil Fuel Consumption 1973-2013",'Fossil Fuel Consumption','-k','-m')
-    #plt.legend(['Primary Energy Consumption','Best Fit Primary Energy','Fossil Fuel Consumption','Best Fit Fossil Fuel'], loc='best')
+    #Graph_Data_Simple2(Dates,primary_energy_consumption,fossil_fuel_consumption,"Primary Energy Consumption VS Fossil Fuel Consumption 1973-2013",'Primary Energy Consumption','Fossil Fuel Consumption','-b','-r','-k','-m')
     #Correlate_Data(primary_energy_consumption,fossil_fuel_consumption,Dates)
     
     ###################Primary Energy PRODUCTION vs Sector###################
     ###Primary Nuclear###
-    #Graph_Data_Simple2(Dates,primary_energy_production,"Primary Energy Production VS Nuclear Electric Production 1973-2013",'Primary Energy Production','-b','-r')
-    #Graph_Data_Simple2(Dates,nuclear_electric_production,"Primary Energy Production VS Nuclear Electric Production 1973-2013",'Nuclear Electric Production','-g','-k')
-    #plt.legend(['Primary Energy Production','Best Fit Primary Energy','Nulcear Electric Production','Best Fit Nuclear'], loc='best')
+    #Graph_Data_Simple2(Dates,primary_energy_production,nuclear_electric_production,"Primary Energy Production VS Nuclear Electric Production 1973-2013",'Primary Energy Production','Nuclear Electric Production','-b','-r','-g','-k')
     #Correlate_Data(primary_energy_production,nuclear_electric_production,Dates)
+    
     ###Primary Renewable###
-    #Graph_Data_Simple2(Dates,primary_energy_production,"Primary Energy Production VS Renewable Energy Production 1973-2013",'Primary Energy Production','-b','-r')
-    #Graph_Data_Simple2(Dates,renewable_energy_production,"Primary Energy Production VS Renewable Energy Production 1973-2013",'Renewable Energy Production','-g','-r')
-    #plt.legend(['Primary Energy Production','Best Fit Primary Energy','Renewable Energy Production','Best Fit Renewable'], loc='best')
-    #Correlate_Data(primary_energy_production,nuclear_electric_production,Dates)
+    #Graph_Data_Simple2(Dates,primary_energy_production,renewable_energy_production,"Primary Energy Production VS Renewable Energy Production 1973-2013",'Primary Energy Production','Renewable Energy Production','-b','-r','- c','-r')
+    #Correlate_Data(primary_energy_production,renewable_energy_production,Dates)
+    
     ###Primary Fossil###
-    #Graph_Data_Simple2(Dates,primary_energy_production,"Primary Energy Production VS Fossil Fuel Production 1973-2013",'Primary Energy Production','-b','-r')
-    #Graph_Data_Simple2(Dates,fossil_fuel_production,"Primary Energy Production VS Fossil Fuel Production 1973-2013",'Fossil Fuel Production','-k','-m')
-    #plt.legend(['Primary Energy Production','Best Fit Primary Energy','Fossil Fuel Production','Best Fit Fossil Fuel'], loc='best')
-    #Correlate_Data(primary_energy_production,nuclear_electric_production,Dates)
+    #Graph_Data_Simple2(Dates,primary_energy_production,fossil_fuel_production,"Primary Energy Production VS Fossil Fuel Production 1973-2013",'Primary Energy Production','Fossil Fuel Production','-b','-r','-k','-m')
+    #Correlate_Data(primary_energy_production,fossil_fuel_production,Dates)
     
     ###################Production vs Consumption###################
     ###Nuclear ###
-    #Graph_Data_Simple2(Dates,nuclear_electric_production,"Nuclear Electric Production VS Nuclear Electric Consumption 1973-2013",'Nuclear Electric Production','-b','-r')
-    #Graph_Data_Simple2(Dates,nuclear_electric_consumption,"Nuclear Electric Production VS Nuclear Electric Consumption 1973-2013",'Nuclear Electric Consumption','-g','-k')
-    #plt.legend(['Nuclear Electric Production','Best Fit Production','Nulcear Electric Consumption','Best Fit Consumption'], loc='best')
+    #Graph_Data_Simple2(Dates,nuclear_electric_production,nuclear_electric_consumption,"Nuclear Electric Production VS Nuclear Electric Consumption 1973-2013",'Nuclear Electric Production','Nuclear Electric Consumption','-b','-r','-g','-k')
     #Correlate_Data(nuclear_electric_production,nuclear_electric_consumption,Dates)
+    
     ###Renewable###
-    #Graph_Data_Simple2(Dates,renewable_energy_production,"Renewable Energy Production VS Renewable Energy Consumption 1973-2013",'Renewable Energy Production','-b','-r')
-    #Graph_Data_Simple2(Dates,renewable_energy_consumption,"Renewable Energy Production VS Renewable Energy Consumption 1973-2013",'Renewable Energy Consumption','-g','-m')
-    #plt.legend(['Renewable Energy Production','Best Fit Production','Renewable Energy Consumption','Best Fit Consumption'], loc='best')
+    #Graph_Data_Simple2(Dates,renewable_energy_production,renewable_energy_consumption,"Renewable Energy Production VS Renewable Energy Consumption 1973-2013",'Renewable Energy Production','Renewable Energy Consumption','-b','-r','-g','-m')
     #Correlate_Data(renewable_energy_production,renewable_energy_consumption,Dates)
+    
     ###Fossil###
-    #Graph_Data_Simple2(Dates,fossil_fuel_production,"Fossil Fuel Production VS Fossil Fuel Consumption 1973-2013",'Fossil Fuel Production','-b','-r')
-    #Graph_Data_Simple2(Dates,fossil_fuel_consumption,"Fossil Fuel Production VS Fossil Fuel Consumption 1973-2013",'Fossil Fuel Consumption','-k','-m')
-    #plt.legend(['Fossil Fuel Production','Best Fit Production','Fossil Fuel Consumption','Best Fit Consumption'], loc='best')
+    #Graph_Data_Simple2(Dates,fossil_fuel_production,fossil_fuel_consumption,"Fossil Fuel Production VS Fossil Fuel Consumption 1973-2013",'Fossil Fuel Production','Fossil Fuel Consumption','-b','-r','-k','-m')
     #Correlate_Data(fossil_fuel_production,fossil_fuel_consumption,Dates)
+    
     ###Interesting...huge gap between production and consumption.  Wonder if imports makes up for it...
     #x = []
     #y = []
-    #z=[]
     #[x.append(float(val)) for val in fossil_fuel_consumption]
     #[y.append(float(val)) for val in fossil_fuel_production]
-    #[z.append(x-y) for x,y in zip(x,y)]
     #z2=[]
     #x2=[]
     #y2=[]
     #[x2.append(float(val)) for val in primary_energy_imports]
     #[y2.append(float(val)) for val in primary_energy_net_imports]
     #[z2.append(x2+y2) for x2,y2 in zip(x2,y2)]
-    #plt.plot(Dates, z,'-r',Dates,z2,'m-')
+    #plt.plot(Dates,x,'-b',Dates,y,'-g',Dates,z2,'-r')
+    #plt.legend(['Fossil Fuel Consumption','Fossil Fuel Production','Total Energy Imports'],loc='best')
     #plt.show()
     
     ###################Renewable PRODUCTION vs Sectors###################
     ###NUCLEAR###
-    #Graph_Data_Simple2(Dates,renewable_energy_production,"Renewable Energy Production VS Nuclear Electric Production 1973-2013",'Renewable Energy Production','-b','-r')
-    #Graph_Data_Simple2(Dates,nuclear_electric_production,"Renewable Energy Production VS Nuclear Electric Production 1973-2013",'Nuclear Electric Production','-g','-k')
-    #plt.legend(['Renewable Energy Production','Best Fit Renewable','Nulcear Electric Production','Best Fit Nuclear'], loc='best')
+    #Graph_Data_Simple2(Dates,renewable_energy_production,nuclear_electric_production,"Renewable Energy Production VS Nuclear Electric Production 1973-2013",'Renewable Energy Production','Nuclear Electric Production','-b','-r','-g','-k')
     #Correlate_Data(renewable_energy_production,nuclear_electric_consumption,Dates)
+    
     ###PRIMARY###
-    #Graph_Data_Simple2(Dates,renewable_energy_production,"Renewable Energy Production VS Primary Energy Production 1973-2013",'Renewable Energy Production','-g','-r')
-    #Graph_Data_Simple2(Dates,primary_energy_production,"Renewable Energy Production VS Primary Energy Production 1973-2013",'Primary Energy Production','-b','-g')
-    #plt.legend(['Renewable Energy Production','Best Fit Renewable','Primary Energy Production','Best Fit Primary'], loc='best')
+    #Graph_Data_Simple2(Dates,renewable_energy_production,primary_energy_production,"Renewable Energy Production VS Primary Energy Production 1973-2013",'Renewable Energy Production','Primary Energy Production','-g','-r','-b','-g')
     #Correlate_Data(renewable_energy_production,primary_energy_production,Dates)
+    
     ###FOSSIL###
-    #Graph_Data_Simple2(Dates,renewable_energy_production,"Renewable Energy Production VS Fossil Fuel Production 1973-2013",'Renewable Energy Production','-b','-g')
-    #Graph_Data_Simple2(Dates,fossil_fuel_production,"Renewable Energy Production VS Fossil Fuel Production 1973-2013",'Fossil Fuel Production','-r','-c')
-    #plt.legend(['Renewable Energy Production','Best Fit Renewable','Fossil Fuel Production','Best Fit Fossil'], loc='best')
+    #Graph_Data_Simple2(Dates,renewable_energy_production,fossil_fuel_production,"Renewable Energy Production VS Fossil Fuel Production 1973-2013",'Renewable Energy Production','Fossil Fuel Production','-b','-g','-r','-c')
     #Correlate_Data(renewable_energy_production,primary_energy_production,Dates)
     
     ###################Nuclear PRODUCTION vs Sectors###################
     ###FOSSIL###
-    #Graph_Data_Simple2(Dates,nuclear_electric_production,"Nuclear Electric Production VS Fossil Fuel Production 1973-2013",'Nuclear Electric Production','-g','-k')
-    #Graph_Data_Simple2(Dates,fossil_fuel_production,"Nuclear Electric Production VS Fossil Fuel Production 1973-2013",'Fossil Fuel Production','-c','-r')
-    #plt.legend(['Nuclear Electric Production','Best Fit Nuclear','Fossil Fuel Production','Best Fit Fossil'], loc='best')
+    #Graph_Data_Simple2(Dates,nuclear_electric_production,fossil_fuel_production,"Nuclear Electric Production VS Fossil Fuel Production 1973-2013",'Nuclear Electric Production','Fossil Fuel Production','-g','-k','-c','-r')
     #Correlate_Data(nuclear_electric_production,fossil_fuel_production,Dates)
+    
     ###RENEWABLE###
-    #Graph_Data_Simple2(Dates,nuclear_electric_production,"Nuclear Electric Production VS Renewable Energy Production 1973-2013",'Nuclear Electric Production','-g','-k')
-    #Graph_Data_Simple2(Dates,renewable_energy_production,"Nuclear Electric Production VS Renewable Energy Production 1973-2013",'Renewable Energy Production','-b','-c')
-    #plt.legend(['Nuclear Electric Production','Best Fit Nuclear','Renewable Energy Production','Best Fit Renewable'], loc='best')
+    #Graph_Data_Simple2(Dates,nuclear_electric_production,renewable_energy_production,"Nuclear Electric Production VS Renewable Energy Production 1973-2013",'Nuclear Electric Production','Renewable Energy Production','-g','-k','-b','-c')
     #Correlate_Data(nuclear_electric_production,renewable_energy_production,Dates)
+    
     ###PRIMARY###
-    #Graph_Data_Simple2(Dates,nuclear_electric_production,"Nuclear Electric Production VS Primary Energy Production 1973-2013",'Nuclear Electric Production','-g','-k')
-    #Graph_Data_Simple2(Dates,renewable_energy_production,"Nuclear Electric Production VS Primary Energy Production 1973-2013",'Primary Energy Production','-b','-c')
-    #plt.legend(['Nuclear Electric Production','Best Fit Nuclear','Primary Energy Production','Best Fit Primary'], loc='best')
+    #Graph_Data_Simple2(Dates,nuclear_electric_production,renewable_energy_production,"Nuclear Electric Production VS Primary Energy Production 1973-2013",'Nuclear Electric Production','Primary Energy Production','-r','-k','-m','-c')
     #Correlate_Data(nuclear_electric_production,primary_energy_production,Dates)
     
     ###################Fossil Fuel PRODUCTION vs Sectors###################
     ###NUCLEAR###
-    #Graph_Data_Simple2(Dates,fossil_fuel_production,"Fossil Fuel Production VS Nuclear Electric Production 1973-2013",'Fossil Fuel Production','-c','-r')
-    #Graph_Data_Simple2(Dates,nuclear_electric_production,"Fossil Fuel Production VS Nuclear Electric Production 1973-2013",'Nuclear Electric Production','-g','-k')
-    #plt.legend(['Fossil Fuel Production','Best Fit Fossil','Nuclear Electric Production','Best Fit Nuclear'], loc='best')
+    #Graph_Data_Simple2(Dates,fossil_fuel_production,nuclear_electric_production,"Fossil Fuel Production VS Nuclear Electric Production 1973-2013",'Fossil Fuel Production','Nuclear Electric Production','-c','-r','-g','-k')
     #Correlate_Data(fossil_fuel_production,nuclear_electric_production,Dates)
+    
     ###RENEWABLE###
-    #Graph_Data_Simple2(Dates,fossil_fuel_production,"Fossil Fuel Production VS Nuclear Electric Production 1973-2013",'Fossil Fuel Production','-c','-r')
-    #Graph_Data_Simple2(Dates,renewable_energy_production,"Fossil Fuel Production VS Nuclear Electric Production 1973-2013",'Renewable Energy Production','-b','-c')
-    #plt.legend(['Fossil Fuel Production','Best Fit Fossil','Renewable Energy Production','Best Fit Renewable'], loc='best')
+    #Graph_Data_Simple2(Dates,fossil_fuel_production,renewable_energy_production,"Fossil Fuel Production VS Renewable Production 1973-2013",'Fossil Fuel Production','Renewable Energy Production','-c','-r','-b','-m')
     #Correlate_Data(fossil_fuel_production,renewable_energy_production,Dates)
+    
     ###PRIMARY###
-    #Graph_Data_Simple2(Dates,fossil_fuel_production,"Fossil Fuel Production VS Primary Energy Production 1973-2013",'Fossil Fuel Production','-c','-r')
-    #Graph_Data_Simple2(Dates,primary_energy_production,"Fossil Fuel Production VS Primary Energy Production 1973-2013",'Primary Energy Production','-b','-g')
-    #plt.legend(['Fossil Fuel Production','Best Fit Fossil','Primary Energy Production','Best Fit Primary'], loc='best')
+    #Graph_Data_Simple2(Dates,fossil_fuel_production,primary_energy_production,"Fossil Fuel Production VS Primary Energy Production 1973-2013",'Fossil Fuel Production','Primary Energy Production','-c','-r','-b','-g')
     #Correlate_Data(fossil_fuel_production,primary_energy_production,Dates)
     
 def Graph_Data_Simple(Dates,Data_Set,Graph_Title,Data_Set_Title,line_color,poly_lc):
@@ -254,22 +226,29 @@ def Graph_Data_Simple(Dates,Data_Set,Graph_Title,Data_Set_Title,line_color,poly_
     #plt.legend([Data_Set_Title], loc='upper left')
     plt.show()
     
-def Graph_Data_Simple2(Dates,Data_Set,Graph_Title,Data_Set_Title,line_color,poly_lc):
+def Graph_Data_Simple2(Dates,Data_Set1,Data_Set2,Graph_Title,Data_Set_Title1,Data_Set_Title2,line_color1,poly_lc1,line_color2,poly_lc2):
     x = mdates.date2num(Dates)
     #Setting up dates so that they can plot correctly
     x = x.tolist()
     #Converting x to list from np.array so that polyfit line can be generated
-    y=[]
-    [y.append(float(Data_Set[i])) for i in range(len(Data_Set))]
+    y1=[]
+    y2=[]
+    [y1.append(float(Data_Set1[i])) for i in range(len(Data_Set1))]
+    [y2.append(float(Data_Set2[i])) for i in range(len(Data_Set2))]
     #Setting up the BTU measures
-    poly_fit_ln = polyfit(x,y,5)
-    poly_fit_fn = poly1d(poly_fit_ln)
+    poly_fit_ln1 = polyfit(x,y1,5)
+    poly_fit_fn1 = poly1d(poly_fit_ln1)
+    poly_fit_ln2 = polyfit(x,y2,5)
+    poly_fit_fn2 = poly1d(poly_fit_ln2)
+    
     #Linear regression
-    plt.plot(Dates, Data_Set,line_color,Dates,poly_fit_fn(x),poly_lc)
+    plt.plot(Dates, Data_Set1,line_color1,Dates,poly_fit_fn1(x),poly_lc1)
+    plt.plot(Dates, Data_Set2,line_color2,Dates,poly_fit_fn2(x),poly_lc2)
     plt.title(Graph_Title)
     plt.ylabel('Quadrillion BTU')
     plt.xlabel('Years')
-    #plt.legend([Data_Set_Title], loc='upper left')
+    plt.grid()
+    plt.legend([Data_Set_Title1,(Data_Set_Title1+" Best Fit"),Data_Set_Title2,(Data_Set_Title2+" Best Fit")], loc='best')
     plt.show()
     
 def Correlate_Data(Data_Set1, Data_Set2,Dates):
