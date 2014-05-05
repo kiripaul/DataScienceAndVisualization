@@ -127,16 +127,16 @@ def SetUp2Graph(Desc, Value, Dates):
     #Graph_Data_Simple2(Dates,primary_energy_consumption,fossil_fuel_consumption,"Primary Energy Consumption VS Fossil Fuel Consumption 1973-2013",'Primary Energy Consumption','Fossil Fuel Consumption','-b','-r','-k','-m')
     #Correlate_Data(primary_energy_consumption,fossil_fuel_consumption,Dates)
     
-    ###################Primary Energy PRODUCTION vs Sector###################
-    ###Primary Nuclear###
+    ##################Primary Energy PRODUCTION vs Sector###################
+    ##Primary Nuclear###
     #Graph_Data_Simple2(Dates,primary_energy_production,nuclear_electric_production,"Primary Energy Production VS Nuclear Electric Production 1973-2013",'Primary Energy Production','Nuclear Electric Production','-b','-r','-g','-k')
     #Correlate_Data(primary_energy_production,nuclear_electric_production,Dates)
     
-    ###Primary Renewable###
-    #Graph_Data_Simple2(Dates,primary_energy_production,renewable_energy_production,"Primary Energy Production VS Renewable Energy Production 1973-2013",'Primary Energy Production','Renewable Energy Production','-b','-r','- c','-r')
+    ##Primary Renewable###
+    #Graph_Data_Simple2(Dates,primary_energy_production,renewable_energy_production,"Primary Energy Production VS Renewable Energy Production 1973-2013",'Primary Energy Production','Renewable Energy Production','-b','-r','-c','-r')
     #Correlate_Data(primary_energy_production,renewable_energy_production,Dates)
     
-    ###Primary Fossil###
+    ##Primary Fossil###
     #Graph_Data_Simple2(Dates,primary_energy_production,fossil_fuel_production,"Primary Energy Production VS Fossil Fuel Production 1973-2013",'Primary Energy Production','Fossil Fuel Production','-b','-r','-k','-m')
     #Correlate_Data(primary_energy_production,fossil_fuel_production,Dates)
     
@@ -144,11 +144,11 @@ def SetUp2Graph(Desc, Value, Dates):
     ###Nuclear ###
     #Graph_Data_Simple2(Dates,nuclear_electric_production,nuclear_electric_consumption,"Nuclear Electric Production VS Nuclear Electric Consumption 1973-2013",'Nuclear Electric Production','Nuclear Electric Consumption','-b','-r','-g','-k')
     #Correlate_Data(nuclear_electric_production,nuclear_electric_consumption,Dates)
-    
+    #
     ###Renewable###
     #Graph_Data_Simple2(Dates,renewable_energy_production,renewable_energy_consumption,"Renewable Energy Production VS Renewable Energy Consumption 1973-2013",'Renewable Energy Production','Renewable Energy Consumption','-b','-r','-g','-m')
     #Correlate_Data(renewable_energy_production,renewable_energy_consumption,Dates)
-    
+    #
     ###Fossil###
     #Graph_Data_Simple2(Dates,fossil_fuel_production,fossil_fuel_consumption,"Fossil Fuel Production VS Fossil Fuel Consumption 1973-2013",'Fossil Fuel Production','Fossil Fuel Consumption','-b','-r','-k','-m')
     #Correlate_Data(fossil_fuel_production,fossil_fuel_consumption,Dates)
@@ -198,11 +198,11 @@ def SetUp2Graph(Desc, Value, Dates):
     ###NUCLEAR###
     #Graph_Data_Simple2(Dates,fossil_fuel_production,nuclear_electric_production,"Fossil Fuel Production VS Nuclear Electric Production 1973-2013",'Fossil Fuel Production','Nuclear Electric Production','-c','-r','-g','-k')
     #Correlate_Data(fossil_fuel_production,nuclear_electric_production,Dates)
-    
+    #
     ###RENEWABLE###
     #Graph_Data_Simple2(Dates,fossil_fuel_production,renewable_energy_production,"Fossil Fuel Production VS Renewable Production 1973-2013",'Fossil Fuel Production','Renewable Energy Production','-c','-r','-b','-m')
     #Correlate_Data(fossil_fuel_production,renewable_energy_production,Dates)
-    
+    #
     ###PRIMARY###
     #Graph_Data_Simple2(Dates,fossil_fuel_production,primary_energy_production,"Fossil Fuel Production VS Primary Energy Production 1973-2013",'Fossil Fuel Production','Primary Energy Production','-c','-r','-b','-g')
     #Correlate_Data(fossil_fuel_production,primary_energy_production,Dates)
