@@ -14,7 +14,7 @@ from statsmodels.sandbox.regression.predstd import wls_prediction_std
 
 
 def Main():
-    file_path = open("TotalEnergyOverview_Monthly_1973-2013.csv",'r')
+    file_path = open("data/TotalEnergyOverview_Monthly_1973-2013.csv",'r')
     
     TEO_CSV = csv.DictReader(file_path)
     
@@ -22,7 +22,7 @@ def Main():
     value = []
     date_YYYMM = [] 
       
-    f = open("Yearly_Summaries.txt","w")
+    f = open("data/Yearly_Summaries.txt","w")
     
     for line in TEO_CSV:
         year = line["YYYYMM"][0:4]
